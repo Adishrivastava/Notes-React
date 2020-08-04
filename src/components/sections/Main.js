@@ -6,6 +6,7 @@ import Details from './Details';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import NotesContext from '../../contexts/NotesContext';
+import AddBtn from '../layout/AddBtn';
 
 const useStyles = makeStyles({
 	root: {
@@ -32,6 +33,7 @@ function Main() {
 
 	return (
 		<div className={root}>
+			<AddBtn />
 			{width > 800 ? (
 				<>
 					<Notes />

@@ -2,8 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NotesContext from '../../contexts/NotesContext';
 import { Button } from '@material-ui/core';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+
 import ArrowLeftAlt from '@material-ui/icons/ArrowLeft';
 import AcUnit from '@material-ui/icons/AcUnit';
 
@@ -44,21 +43,7 @@ const useStyles = makeStyles((theme) => ({
 		width: '80%',
 		marginLeft: '10%',
 	},
-	icon: {
-		position: 'absolute',
-		bottom: '20px',
-		right: '20px',
-		display: 'flex',
-		justifyContent: 'center',
-		alignContent: 'center',
-	},
-	icons: {
-		background: theme.palette.primary.dark,
-		color: 'white',
-		'&:hover,&:focus': {
-			background: theme.palette.primary.main,
-		},
-	},
+
 	backIcon: {
 		display: 'flex',
 		justifyContent: 'flex-end',
@@ -89,22 +74,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Details() {
-	const {
-		currentNote,
-		updateNote,
-		addNote,
-		changePage,
-		width,
-		notes,
-	} = useContext(NotesContext);
+	const { currentNote, updateNote, changePage, width, notes } = useContext(
+		NotesContext
+	);
 
 	const {
 		root,
 		titleInput,
 		msgInput,
 		cont,
-		icons,
-		icon,
+
 		backIcon,
 		upBtn,
 		fullCont,
@@ -171,16 +150,6 @@ function Details() {
 					</div>
 				</div>
 			)}
-			<div className={icon}>
-				<Fab
-					className={icons}
-					onClick={(e) => {
-						addNote();
-					}}
-				>
-					<AddIcon />
-				</Fab>
-			</div>
 		</div>
 	);
 }
